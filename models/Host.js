@@ -38,11 +38,11 @@ Host.init(
         len: [4],
       },
     },
-    game_code: {
-      type: DataTypes.STRING,
+    game_id: {
+      type: DataTypes.INTEGER,
       references: {
         model: 'game',
-        key: 'code'
+        key: 'id'
       }
     },
     player_id: {

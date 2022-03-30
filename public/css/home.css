@@ -1,0 +1,175 @@
+/* universal selector */
+/* removes default margin and padding from everything */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+    line-height: 200%;
+}
+
+:root {
+    --black: #1E1E24;
+    --white: #F7F7FF;
+    --blue: #2274A5;
+    --red: #A92335;
+    --green: #588157;
+    --yellow: #E3B505;
+}
+/* universal selector */
+
+/* utility classes */
+.background-black {
+    background-color: var(--black) !important;
+}
+
+.background-white {
+    background-color: var(--white) !important;
+}
+
+.background-red {
+    background-color: var(--red) !important;
+}
+
+.background-blue {
+    background-color: var(--blue) !important;
+}
+
+.background-green {
+    background-color: var(--green);
+}
+
+.background-yellow {
+    background-color: var(--yellow);
+}
+
+.text-white {
+    color: var(--white) !important;
+}
+
+.text-red {
+    color: var(--red) !important;
+}
+
+.text-blue {
+    color: var(--blue) !important;
+}
+
+.text-black {
+    color: var(--black) !important
+}
+
+.text-green {
+    color: var(--green) !important;
+}
+
+.text-yellow {
+    color: var(--yellow) !important;
+}
+/* utility classes */
+
+/* buttons */
+#host, #join, #submit, #display, #hide, #banish-submit {
+    border: none !important;
+    font-family: 'Merriweather', serif;
+    color: var(--white);
+}
+/* buttons */
+
+/* navbar - does not display on touch devices */
+#navigation-img {
+    width: 400px;
+    margin: 15px;
+}
+
+#nav-game:hover {
+    background-color: var(--black) !important;
+    color: var(--red) !important;
+}
+
+#nav-role:hover {
+    background-color: var(--black) !important;
+    color: var(--blue) !important;
+}
+
+#nav-explanation:hover {
+    background-color: var(--black) !important;
+    color: var(--blue) !important;
+}
+/* navbar - does not display on touch devices */
+
+
+/* left column */
+#homepage-buttons {
+    margin-top: 20px !important;
+    opacity: 90% !important;
+}
+
+#timer-label {
+    font-size: 25px;
+    margin-top: 0;
+}
+/* left column */
+
+
+/* right column */
+h3 {
+    font-size: 30px;
+    font-family: 'MedievalSharp', cursive;
+    margin-top: 20px;
+}
+
+#story {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+#game-instructions {
+    margin: 10px;
+    padding: 10px;
+}
+
+#role-explanation {
+    padding: 10px;
+    list-style: circle;
+}
+
+#banish {
+    margin: 0% 10% 10% 10%;
+}
+
+#king-question {
+    font-size: 20px;
+}
+/* right column */
+
+/* footer style */
+footer {
+    font-size: 12px;
+}
+/* footer style */
+
+@media screen and (min-width: 768px) {
+    /* applies to screens above 768px */
+
+    #navigation {
+        top: 0;
+        position: sticky;
+        position: -webkit-sticky;
+        z-index: 999;
+    }
+
+    #left-column {
+        padding: 0.75rem;
+    }
+
+    #right-column {
+        padding: 0.75rem;
+        height: 78vh;
+        overflow: scroll;
+    }
+
+    #banish {
+        margin: 0;
+    }
+}

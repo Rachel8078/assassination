@@ -7,15 +7,10 @@ class Game extends Model {}
 // define table columns and configuration
 Game.init(
     {
-      id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-      },  
-      code: {
+        code: {
             type: DataTypes.STRING,
             allowNull: false,
+            primaryKey: true,
         },
     },
     {
