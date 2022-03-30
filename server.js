@@ -6,6 +6,7 @@ const express = require('express'),
   exphbs = require('express-handlebars'),
   session = require('express-session'),
   sequelize = require('./config/connection');
+  path = require('path');
 
 //configure db session storage
 const SequelizeStore = require('express-session-sequelize')(session.Store);
@@ -25,10 +26,9 @@ app.engine(
 
 // configure session/cookies
 const sess = {
-  // name: "connect.sid",
-  // secret: process.env.SESSION_SECRET,
-  secret: 'Super secret stuff',
-  // path: "/",
+  name: "connect.sid",
+  secret: process.env.SESSION_SECRET,
+  path: "/",
   cookie: {
     //set to 5 minutes for testing
     maxAge: 1000 * 60 * 5,
@@ -51,11 +51,12 @@ app.use(
 );
 // configure static resources (css, images, js)
 app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // configure routes
 app.use(routes);
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`);
   });

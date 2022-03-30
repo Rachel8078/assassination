@@ -6,20 +6,24 @@ class Game extends Model {}
 
 // define table columns and configuration
 Game.init(
-    {
-        code: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            primaryKey: true,
-        },
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'game',
-    }
+    code: {
+      type: DataTypes.STRING,
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'game',
+  }
 );
 
 module.exports = Game;
